@@ -1,0 +1,61 @@
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+!URxvt font
+!URxvt.letterSpace: -1
+URxvt.font: xft:Dejavu Sans Mono:size=9, xft:Symbola:pixelsize=9
+
+!rice
+URxvt.scrollBar: false
+urxvt*transparent: true
+urxvt*shading: 30
+
+!Perl exts
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/qutebrowser
+URxvt.matcher.button: 1
+
+!Brogrammer scheme
+*.foreground:  #d6dbe5
+*.background:  #131313
+*.cursorColor: #b9b9b9
+!
+! Black
+*.color0:      #1f1f1f
+*.color8:      #d6dbe5
+!
+! Red
+*.color1:      #f81118
+*.color9:      #de352e
+!
+! Green
+*.color2:      #2dc55e
+*.color10:     #1dd361
+!
+! Yellow
+*.color3:      #ecba0f
+*.color11:     #f3bd09
+!
+! Blue
+*.color4:      #2a84d2
+*.color12:     #1081d6
+!
+! Magenta
+*.color5:      #4e5ab7
+*.color13:     #5350b9
+!
+! Cyan
+*.color6:      #1081d6
+*.color14:     #0f7ddb
+!
+! White
+*.color7:      #d6dbe5
+*.color15:     #ffffff
+!
+! Bold, Italic, Underline
+*.colorBD:     #d6dbe5

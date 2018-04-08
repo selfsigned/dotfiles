@@ -1,0 +1,18 @@
+order += "volume master"
+order += "cpu_usage"
+order += "battery 0"
+order += "time"
+
+battery 0 {
+	format = "%consumption %percentage"
+	status_chr = "⚇"
+	hide_seconds = true
+	last_full_capacity = true
+}
+
+volume master {
+	device = "pulse"
+	mixer = "master"
+	format = "♪:%volume"
+	format_muted = "🔇"
+}

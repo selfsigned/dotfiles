@@ -1,0 +1,224 @@
+### Variables ###
+
+set $mod Mod4
+set $mod2 Shift
+
+# Workspace names
+set $WS1 1:Web
+set $WS2 2:IRC
+set $WS3 3:Dev
+set $WS4 4:Video
+set $WS5 5:Music
+set $WS6 6:Photo
+set $WS7 7:Games
+set $WS8 8
+set $WS9 9
+
+# Font
+font pango:DejaVu Sans Mono 7
+
+# Borders
+new_float normal
+new_window 1pixel
+
+### wm window keybinds ###
+# movement keys
+set $LK h
+set $DK j
+set $UK k
+set $RK l
+# split keys
+set $splith c
+set $splitv v
+
+# kill focused window
+bindsym $mod+$mod2+q kill
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# change focus
+bindsym $mod+$LK focus left
+bindsym $mod+$DK focus down
+bindsym $mod+$UK focus up
+bindsym $mod+$RK focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+$mod2+$LK move left
+bindsym $mod+$mod2+$DK move down
+bindsym $mod+$mod2+$UK move up
+bindsym $mod+$mod2+$RK move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+$mod2+Left move left
+bindsym $mod+$mod2+Down move down
+bindsym $mod+$mod2+Up move up
+bindsym $mod+$mod2+Right move right
+
+# split in horizontal/vertical orientation
+bindsym $mod+$splith split h
+bindsym $mod+$splitv split v
+
+
+
+
+
+### containers ###
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+$mod2+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+
+
+
+
+### workspaces ###
+
+# switch to workspace
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+
+# move focused container to workspace
+bindsym $mod+$mod2+0 move container to workspace $WS1
+bindsym $mod+$mod2+2 move container to workspace $WS2
+bindsym $mod+$mod2+3 move container to workspace $WS3
+bindsym $mod+$mod2+4 move container to workspace $WS4
+bindsym $mod+$mod2+5 move container to workspace $WS5
+bindsym $mod+$mod2+6 move container to workspace $WS6
+bindsym $mod+$mod2+7 move container to workspace $WS7
+bindsym $mod+$mod2+8 move container to workspace $WS8
+bindsym $mod+$mod2+9 move container to workspace $WS9
+
+
+
+
+
+### resizing ###
+
+# resize window
+mode "resize" {
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $RK resize shrink width 10 px or 10 ppt
+        bindsym $UK resize grow height 10 px or 10 ppt
+        bindsym $DK resize shrink height 10 px or 10 ppt
+        bindsym $LK resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+
+
+
+
+### assign window behavior ###
+
+# assign windows to workspaces
+assign [class="Chromium|Firefox|qutebrowser"] $WS1
+assign [class="Atom"] $WS3
+assign [class="mpv"] $WS4
+assign [class="GMPC"] $WS5
+assign [class="darktable"] $WS6
+
+# assign floating windows
+for_window [class="feh|Pavucontrol"] floating enable
+for_window [title="Preferences$"] floating enable
+for_window [window_role="^conversation$"] floating enable
+for_window [window_role="messages"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+
+
+
+######################################################################
+
+
+
+### i3bar ###
+bar {
+        status_command i3status
+        tray_output primary
+        position bottom
+}
+
+
+### i3 functions ###
+
+# reload the configuration file
+bindsym $mod+$mod2+c reload
+# restart i3 inplace
+bindsym $mod+$mod2+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+$mod2+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+#### exec keybinds ###
+#lock command
+bindsym XF86ScreenSaver exec "xscreensaver-command -lock"
+
+# lock the screen
+bindsym $mod+$mod2+s exec $lock
+
+# start a terminal
+bindsym $mod+Return exec urxvtc
+
+# rofi
+bindsym $mod+d exec zsh -c  "rofi -show run"
+bindsym $mod+0 exec "rofi -show window"
+bindsym $mod+b exec "rofi -show window"
+
+# brightness
+bindsym $mod+F6  exec --no-startup-id xbacklight -inc 2
+bindsym $mod+F7  exec --no-startup-id xbacklight -dec 2
+
+# volume keys
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+### daemons and shit ###
+exec --no-startup-id urxvtd
+exec --no-startup-id xscreensaver
+exec --no-startup-id redshift -l 48.853:2.35
