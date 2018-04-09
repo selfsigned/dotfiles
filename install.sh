@@ -4,13 +4,13 @@
 # but macOS doesn't have the -f flag, so
 # https://stackoverflow.com/questions/3915040/bash-fish-command-to-print-absolute-path-to-a-file
 full_path () {
-	echo "$(cd "$(dirname "$1")"; pwd)/$(basename "$1")"
+    echo "$(cd "$(dirname "$1")"; pwd)/$(basename "$1")"
 }
 REPO=$(dirname $(full_path "$0"))
 
 # Files
 BASIC=".vimrc .tmux.conf"
-BASIC_P=".vim/undo"
+BASIC_P=".vim/undo .vim/tags"
 
 X11=".Xresources .xinitrc"
 BSPWM=".config/bspwm/bspwmrc .config/sxhkd/sxhkdrc"

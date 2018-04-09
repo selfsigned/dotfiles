@@ -9,6 +9,7 @@ Plug 'tpope/vim-commentary'		" (un)Comment (gcc, gc)
 Plug 'tpope/vim-eunuch'			" UNIX-like commands
 Plug 'ap/vim-css-color'			" CSS color support
 Plug 'airblade/vim-gitgutter'		" Git integration
+Plug 'ludovicchabant/vim-gutentags'	" Tag management
 Plug 'scrooloose/nerdtree'		" Nerdtree (bloat)
 Plug 'sjl/gundo.vim'			" Gundo (bloat)
 Plug 'vim-airline/vim-airline'		" Status bar bloat
@@ -55,6 +56,14 @@ autocmd InsertLeave * :set relativenumber nonumber
 
 " Header key
 nmap <f1> :FortyTwoHeader<CR>
+
+" Omni completion
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+" Gutentags
+let g:gutentags_cache_dir = '~/.vim/tags'
+let g:gutentags_ctags_exclude = ['*.md', '*.txt']
 
 " NERDdtree
 map <C-n> :NERDTreeToggle<CR>
