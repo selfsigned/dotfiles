@@ -20,6 +20,9 @@ URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/qutebrowser
 URxvt.matcher.button: 1
 
+!Rofi
+rofi.theme: ~/.cache/wal/colors-rofi-dark
+
 !Brogrammer colorscheme
 *.foreground:  #d6dbe5
 *.background:  #131313
