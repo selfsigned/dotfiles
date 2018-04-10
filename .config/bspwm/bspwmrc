@@ -4,15 +4,15 @@ sxhkd &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
-bspc config border_width        2
-bspc config window_gap          5
+# Pick your poison
+#. "${HOME}/.config/bspwm/bspwmrcRiced"
+. "${HOME}/.config/bspwm/bspwmrcNormal"
 
-bspc config split_ratio          0.49
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
-
-bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Firefox desktop='^1'
+bspc rule -a Pavucontrol state=floating
+bspc rule -a Virtualbox state=floating
+bspc rule -a Qemu-system-x86_64 state=floating
 
+compton &
 xscreensaver &
-redshift -l 48.853:2.35
+redshift -l 48.853:2.35 &

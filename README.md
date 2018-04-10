@@ -26,12 +26,17 @@ git clone https://github.com/selfsigned/dotfiles ~/.dotfiles
 ## Content
 #### Basic
 vimrc and tmux.conf
-#### Bspwm and i3
+#### Bspwm
 Dependencies:
 - rxvt-unicode
 - rofi
+- compton
 - redshift
 - xscreensaver
+
+Optional
+- pywal
+- hsetroot
 
 ## Screenshots
 TODO

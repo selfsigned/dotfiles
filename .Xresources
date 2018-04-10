@@ -12,15 +12,15 @@ URxvt.font: xft:Dejavu Sans Mono:size=9, xft:Symbola:pixelsize=9
 
 !rice
 URxvt.scrollBar: false
-urxvt*transparent: true
-urxvt*shading: 30
+URxvt*depth: 32
+URxvt*background: rgba:0000/0000/0200/c700
 
 !Perl exts
 URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/qutebrowser
 URxvt.matcher.button: 1
 
-!Brogrammer scheme
+!Brogrammer colorscheme
 *.foreground:  #d6dbe5
 *.background:  #131313
 *.cursorColor: #b9b9b9

@@ -10,19 +10,29 @@ REPO=$(dirname $(full_path "$0"))
 
 # Files
 BASIC=".vimrc .tmux.conf"
-BASIC_P=".vim/undo .vim/tags"
+BASIC_P=".vim/undo \
+        .vim/tags"
 
 X11=".Xresources .xinitrc"
-BSPWM=".config/bspwm/bspwmrc .config/sxhkd/sxhkdrc"
-BSPWM_D=".config/bspwm .config/sxhkd"
+BSPWM=" .config/bspwm/bspwmrc \
+        .config/bspwm/bspwmrcNormal \
+        .config/bspwm/bspwmrcRiced \
+        .config/sxhkd/sxhkdrc"
+BSPWM_D=".config/bspwm \
+    .config/sxhkd \
+    Pictures/bg"
 
-I3=".config/i3/config .config/i3status/config"
-I3_D=".config/i3 .config/i3status"
+I3=".config/i3/config \
+    .config/i3status/config"
+I3_D=".config/i3 \
+    .config/i3status"
 
 EXTRA=" .newsboat/urls \
         .config/termite/config \
         .config/qutebrowser/config.py"
-EXTRA_D=".newsboat .config/termite .config/qutebrowser"
+EXTRA_D=".newsboat \
+        .config/termite \
+        .config/qutebrowser"
 
 make_symlink () {
     for file in $@; do
