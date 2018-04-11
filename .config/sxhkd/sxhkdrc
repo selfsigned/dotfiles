@@ -140,7 +140,7 @@ super + {Left,Down,Up,Right}
 {XF86MonBrightnessUp, super + F7}
 	light -A 2
 {XF86MonBrightnessDown, super + F6}
-	light -D 2
+	light -U 2
 
 XF86ScreenSaver
 	xscreensaver-command -lock
