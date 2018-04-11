@@ -129,19 +129,18 @@ super + {Left,Down,Up,Right}
 # Multimedia
 #
 
-XF86AudioRaiseVolume
+{XF86AudioRaiseVolume, super + F10}
 	pactl set-sink-volume @DEFAULT_SINK@ +5%
-
-XF86AudioLowerVolume
+{XF86AudioLowerVolume, super + F9}
 	pactl set-sink-volume @DEFAULT_SINK@ -5%
-
-XF86AudioMute
+{XF86AudioMute, super + F8}
 	pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-XF86MonBrightnessUp
-	xbacklight -inc 2
-XF86MonBrightnessDown
-	xbacklight -dec 2
+
+{XF86MonBrightnessUp, super + F7}
+	light -A 2
+{XF86MonBrightnessDown, super + F6}
+	light -D 2
 
 XF86ScreenSaver
 	xscreensaver-command -lock

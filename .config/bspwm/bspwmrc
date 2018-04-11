@@ -16,3 +16,6 @@ bspc rule -a Qemu-system-x86_64 state=floating
 compton &
 xscreensaver &
 redshift -l 48.853:2.35 &
+
+# Chromebook
+xss-lock -- xscreensaver-command --lock
