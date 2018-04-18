@@ -17,12 +17,18 @@ c.url.searchengines = {
     "s": "https://www.startpage.com/do/search?q={}",
     "sp": "https://www.startpage.com/do/search?q={}",
     "w": "https://en.wikipedia.org/wiki/Special:Search/{}",
+    "yt": "https://www.youtube.com/results?search_query={}",
     "aw": "https://wiki.archlinux.org/?search={}",
     "gw": "https://wiki.gentoo.org/?search={}",
     "4": "https://boards.4chan.org/{}",
+    "4g": "https://boards.4chan.org/g/catalog#s={}",
     "r": "https://reddit.com/r/{}",
     "rs": "https://reddit.com/search?q={}",
-    "42": "https://profile.intra.42.fr/searches/search?query={}"
+    "hn": "https://hn.algolia.com/?query={}",
+    "sf": "https://stackoverflow.com/search?q={}",
+    "gh": "https://github.com/search?q={}",
+    "42": "https://profile.intra.42.fr/searches/search?query={}",
+    "42g": "https://projects.intra.42.fr/projects/graph?login={}"
 }
 
 c.tabs.show = "multiple"

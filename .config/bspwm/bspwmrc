@@ -10,9 +10,9 @@ bspc monitor -d I II III IV V VI VII VIII IX X
 
 bspc rule -a Firefox desktop='^1'
 bspc rule -a Pavucontrol state=floating
+bspc rule -a Zathura  state=tiled
 bspc rule -a Virtualbox state=floating
 bspc rule -a Qemu-system-x86_64 state=floating
 
-compton &
 xscreensaver &
 redshift -l 48.853:2.35 &

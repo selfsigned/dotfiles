@@ -13,7 +13,9 @@ BASIC=".vimrc .tmux.conf"
 BASIC_P=".vim/undo \
         .vim/tags"
 
-X11=".Xresources .xinitrc"
+X11=".Xresources \
+    .xinitrc \
+    .config/compton.conf"
 BSPWM=" .config/bspwm/bspwmrc \
         .config/bspwm/bspwmrcNormal \
         .config/bspwm/bspwmrcRiced \
@@ -87,7 +89,7 @@ basic () {
 install_bspwm () {
     make_dir $BSPWM_D
     make_symlink $X11 $BSPWM
-    printf "\nDependencies: urxvt rofi redshift xscreensaver\n"
+    printf "\nDependencies: rxvt-unicode rofi pywal hsetroot redshift xscreensaver\n"
 }
 
 bspwm () {
