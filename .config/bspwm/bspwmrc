@@ -10,9 +10,12 @@ bspc monitor -d I II III IV V VI VII VIII IX X
 
 bspc rule -a Firefox desktop='^1'
 bspc rule -a Pavucontrol state=floating
+bspc rule -a Zathura  state=tiled
 bspc rule -a Virtualbox state=floating
 bspc rule -a Qemu-system-x86_64 state=floating
 
-compton &
+# Useless capslock key begone
+setxkbmap -layout "$(setxkbmap -print | awk -F + '/xkb_symbols/ {print $2}')" -option ctrl:nocaps
+
 xscreensaver &
 redshift -l 48.853:2.35 &

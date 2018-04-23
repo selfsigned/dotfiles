@@ -7,6 +7,10 @@ bspc config borderless_monocle      true
 bspc config gapless_monocle         true
 bspc config single_monocle          true
 bspc config focus_follows_pointer   true
+bspc config honor_size_hints        true
+
+killall compton
+compton &
 
 # wal
 wal -a 72 -i "${HOME}/Pictures/bg"
