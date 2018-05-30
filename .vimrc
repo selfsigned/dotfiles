@@ -18,10 +18,15 @@ Plug 'vim-airline/vim-airline-themes'	" more bloat
 Plug 'christoomey/vim-tmux-navigator'	" tmux integration
 Plug 'pandark/42header.vim'		" 42 Header
 call plug#end()
+" Vim 8.1 debug
+packadd termdebug			" gdb term integration
+let g:termdebug_wide = 1
+set mouse=a
 
 " color scheme
 colorscheme badwolf
 let g:airline_theme='badwolf'
+set background=dark
 
 " airline unicode fix
 if !exists('g:airline_symbols')
