@@ -2,6 +2,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'shougo/vimproc', {'do': 'make'}	" Async
 Plug 'tpope/vim-sensible'		" Sensible defaults
 Plug 'w0rp/ale'				" lint
+Plug 'ludovicchabant/vim-gutentags'	" Tag management
 Plug 'Raimondi/delimitMate'		" auto-completion for brackets and such
 Plug 'flazz/vim-colorschemes'		" A nice collection of colorschemes
 Plug 'tpope/vim-surround'		" Change surroundings (cs, ds)
@@ -9,7 +10,7 @@ Plug 'tpope/vim-commentary'		" (un)Comment (gcc, gc)
 Plug 'tpope/vim-eunuch'			" UNIX-like commands
 Plug 'ap/vim-css-color'			" CSS color support
 Plug 'airblade/vim-gitgutter'		" Git integration
-Plug 'ludovicchabant/vim-gutentags'	" Tag management
+Plug 'majutsushi/tagbar'		" Class info using tags (OOP shit)
 Plug 'scrooloose/nerdtree'		" Nerdtree (bloat)
 Plug 'sjl/gundo.vim'			" Gundo (bloat)
 Plug 'vim-airline/vim-airline'		" Status bar bloat
@@ -17,10 +18,15 @@ Plug 'vim-airline/vim-airline-themes'	" more bloat
 Plug 'christoomey/vim-tmux-navigator'	" tmux integration
 Plug 'pandark/42header.vim'		" 42 Header
 call plug#end()
+" Vim 8.1 debug
+packadd termdebug			" gdb term integration
+let g:termdebug_wide = 1
+set mouse=a
 
 " color scheme
 colorscheme badwolf
 let g:airline_theme='badwolf'
+set background=dark
 
 " airline unicode fix
 if !exists('g:airline_symbols')
@@ -65,12 +71,19 @@ set omnifunc=syntaxcomplete#Complete
 let g:gutentags_cache_dir = '~/.vim/tags'
 let g:gutentags_ctags_exclude = ['*.md', '*.txt']
 
+" Tagbar
+map <f3> :TagbarOpenAutoClose<CR>
+map <f4> :TagbarToggle<CR>
+
 " NERDdtree
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.o$', '\.a$', '\.so$']
 
 " Gundo
 map <f5> :GundoToggle<CR>
+
+" Make
+map <f12> :make<CR>
 
 " ALE
 let g:ale_c_clang_options='-std=c89 -Wall -Wextra -Wpedantic -Iinclude -Iincludes -Ilibft -Ilibft/includes -I..libft/includes'
