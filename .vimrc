@@ -56,9 +56,7 @@ autocmd BufRead,BufNewFile *.h,*.c set filetype=c
 match ErrorMsg '\%>80v.\+' " warn after 80 col
 set list
 set listchars=trail:~,extends:>,tab:▸·
-set relativenumber
-autocmd InsertEnter * :set number norelativenumber " dynamic relativenumber
-autocmd InsertLeave * :set relativenumber nonumber
+set number
 
 " Header key
 nmap <f1> :FortyTwoHeader<CR>

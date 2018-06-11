@@ -1,0 +1,3 @@
+command alias stdin settings set target.input-path
+command alias c c -i %1
+script print "\033[0;32mHack the world"
