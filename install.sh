@@ -34,7 +34,8 @@ EXTRA=" .newsboat/urls \
         .config/qutebrowser/config.py"
 EXTRA_D=".newsboat \
         .config/termite \
-        .config/qutebrowser"
+        .config/qutebrowser\
+        .tridactylrc"
 
 make_symlink () {
     for file in $@; do
