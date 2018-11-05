@@ -1,22 +1,22 @@
 call plug#begin('~/.vim/bundle')
-Plug 'shougo/vimproc', {'do': 'make'}	" Async
 Plug 'tpope/vim-sensible'		" Sensible defaults
-Plug 'w0rp/ale'				" lint
+Plug 'w0rp/ale'				" Async linting
 Plug 'ludovicchabant/vim-gutentags'	" Tag management
 Plug 'Raimondi/delimitMate'		" auto-completion for brackets and such
-Plug 'flazz/vim-colorschemes'		" A nice collection of colorschemes
 Plug 'tpope/vim-surround'		" Change surroundings (cs, ds)
 Plug 'tpope/vim-commentary'		" (un)Comment (gcc, gc)
 Plug 'tpope/vim-eunuch'			" UNIX-like commands
 Plug 'ap/vim-css-color'			" CSS color support
-Plug 'airblade/vim-gitgutter'		" Git integration
 Plug 'majutsushi/tagbar'		" Class info using tags (OOP shit)
 Plug 'scrooloose/nerdtree'		" Nerdtree (bloat)
 Plug 'sjl/gundo.vim'			" Gundo (bloat)
+Plug 'pandark/42header.vim'		" 42 Header
+Plug 'flazz/vim-colorschemes'		" A nice collection of colorschemes
 Plug 'vim-airline/vim-airline'		" Status bar bloat
 Plug 'vim-airline/vim-airline-themes'	" more bloat
+Plug 'airblade/vim-gitgutter'		" Git integration
 Plug 'christoomey/vim-tmux-navigator'	" tmux integration
-Plug 'pandark/42header.vim'		" 42 Header
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Go integration
 call plug#end()
 " Vim 8.1 debug
 packadd termdebug			" gdb term integration
@@ -43,6 +43,7 @@ set undodir=$HOME/.vim/undo
 filetype plugin indent on
 autocmd Filetype c setlocal sw=4 sts=4 ts=4 noexpandtab
 autocmd Filetype cpp setlocal sw=4 sts=4 ts=4 noexpandtab
+autocmd Filetype go setlocal sw=4 ts=4 noexpandtab
 autocmd Filetype sh setlocal sw=4 sts=4 ts=8 expandtab
 autocmd Filetype python setlocal sw=4 sts=4 ts=8 expandtab
 
@@ -84,6 +85,6 @@ map <f5> :GundoToggle<CR>
 map <f12> :make<CR>
 
 " ALE
-let g:ale_c_clang_options='-std=c89 -Wall -Wextra -Wpedantic -Iinclude -Iincludes -Ilibft -Ilibft/includes -I..libft/includes'
+let g:ale_c_clang_options='-Wall -Wextra -Wpedantic -Iinclude -Iincludes -Ilibft -Ilibft/includes -I..libft/includes'
 let g:ale_c_gcc_options = g:ale_c_clang_options
 let g:ale_linters = {'c': ['gcc']}
