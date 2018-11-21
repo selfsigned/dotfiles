@@ -76,6 +76,12 @@ install_basic () {
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     make_dir $BASIC_P #vim undo dir
+    echo "Now run ':PlugInstall' within vim\n
+    Softwares to install for completion support:
+    C:clang
+    go: gocode
+    python: jedi
+    rust: racer"
 }
 
 basic () {
@@ -139,9 +145,8 @@ extra () {
 
 mac () {
     echo "If you haven't already, run https://github.com/kube/42homebrew"
-    brew install vim tmux # vim is outdated on MacOS (like everything else)
+    brew install vim tmux ctags # vim is outdated on MacOS (like everything else)
     basic
-    echo "Now run :PlugInstall in vim"
 }
 
 usage () {

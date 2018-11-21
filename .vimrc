@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/bundle')
 Plug 'tpope/vim-sensible'		" Sensible defaults
 Plug 'w0rp/ale'				" Async linting
+Plug 'maralla/completor.vim'		" Completion framework
 Plug 'ludovicchabant/vim-gutentags'	" Tag management
 Plug 'Raimondi/delimitMate'		" auto-completion for brackets and such
 Plug 'tpope/vim-surround'		" Change surroundings (cs, ds)
@@ -62,9 +63,10 @@ set number
 " Header key
 nmap <f1> :FortyTwoHeader<CR>
 
-" Omni completion
+" Completion
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
+let g:completor_clang_disable_placeholders = 1 " disable C placeholders
 
 " Gutentags
 let g:gutentags_cache_dir = '~/.vim/tags'
@@ -85,6 +87,8 @@ map <f5> :GundoToggle<CR>
 map <f12> :make<CR>
 
 " ALE
+nmap <silent> <leader>aj :ALENext<cr>
+nmap <silent> <leader>ak :ALEPrevious<cr>
 let g:ale_c_clang_options='-Wall -Wextra -Wpedantic -Iinclude -Iincludes -Ilibft -Ilibft/includes -I..libft/includes'
 let g:ale_c_gcc_options = g:ale_c_clang_options
 let g:ale_linters = {'c': ['gcc']}

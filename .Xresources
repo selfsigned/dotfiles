@@ -17,7 +17,7 @@ URxvt*background: rgba:0000/0000/0200/c700
 
 !Perl exts
 URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /usr/bin/qutebrowser
+URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
 
 !Rofi
