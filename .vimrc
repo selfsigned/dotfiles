@@ -18,6 +18,7 @@ Plug 'vim-airline/vim-airline-themes'	" more bloat
 Plug 'airblade/vim-gitgutter'		" Git integration
 Plug 'christoomey/vim-tmux-navigator'	" tmux integration
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Go integration
+Plug 'hashivim/vim-terraform'		" terraform integration
 call plug#end()
 " Vim 8.1 debug
 packadd termdebug			" gdb term integration
@@ -47,6 +48,8 @@ autocmd Filetype cpp setlocal sw=4 sts=4 ts=4 noexpandtab
 autocmd Filetype go setlocal sw=4 ts=4 noexpandtab
 autocmd Filetype sh setlocal sw=4 sts=4 ts=8 expandtab
 autocmd Filetype python setlocal sw=4 sts=4 ts=8 expandtab
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 
 " 42 comment style
 autocmd FileType c setlocal comments=sr:/*,mb:**,ex:*/
@@ -58,7 +61,9 @@ autocmd BufRead,BufNewFile *.h,*.c set filetype=c
 match ErrorMsg '\%>80v.\+' " warn after 80 col
 set list
 set listchars=trail:~,extends:>,tab:▸·
-set number
+set relativenumber
+autocmd InsertEnter * :set number norelativenumber " dynamic relativenumber
+autocmd InsertLeave * :set relativenumber nonumber
 
 " Header key
 nmap <f1> :FortyTwoHeader<CR>
@@ -66,6 +71,7 @@ nmap <f1> :FortyTwoHeader<CR>
 " Completion
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
+let g:completor_complete_options='menuone,noselect,preview' " No cancel compl anymore (C^E)
 let g:completor_clang_disable_placeholders = 1 " disable C placeholders
 
 " Gutentags
@@ -85,6 +91,10 @@ map <f5> :GundoToggle<CR>
 
 " Make
 map <f12> :make<CR>
+
+" Terraform
+let g:terraform_fmt_on_save=1
+let g:terraform_align=1
 
 " ALE
 nmap <silent> <leader>aj :ALENext<cr>
