@@ -1,5 +1,5 @@
 # dotfiles
-Norminette proof and it comes with an install script!
+Compliant with 42's norm and it even comes with an install script!
 
 ## Installation
 >I'm a 42 student and I don't have time to write my own config files!
@@ -25,17 +25,19 @@ git clone https://github.com/selfsigned/dotfiles ~/.dotfiles
 
 ## Content
 #### Basic
-vimrc and tmux.conf
+- vimrc
+- tmux.conf
 #### Bspwm
 Dependencies:
 - rxvt-unicode
+- [pywal](https://github.com/dylanaraps/pywal)
+- [xbanish](https://github.com/jcs/xbanish)
 - rofi
 - compton
 - redshift
 - xscreensaver
 
 Optional
-- pywal
 - hsetroot
 
 ## Screenshots

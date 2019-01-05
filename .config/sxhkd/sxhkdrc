@@ -3,10 +3,8 @@
 #
 
 # terminal emulator
-super + shift + Return
-	urxvt
-super + Return
-	termite
+super + {_, shift +} + Return
+	{termite,urxvt}
 
 # program launcher
 super + @space
@@ -114,6 +112,10 @@ super + ctrl + shift + space
 # move/resize
 #
 
+# rotate a group of nodes
+super + {_,shift +} r
+	bspc node @/ -R {180, 90}
+
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
@@ -156,4 +158,4 @@ super + {_,shift + }z
 	exec $HOME/.config/bspwm/{bspwmrcNormal,bspwmrcRiced}
 
 super + ctrl + @space
-	$HOME/.local/bin/rofi-emoji
+	rofi-emoji
