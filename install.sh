@@ -34,7 +34,8 @@ I3_D=".config/i3 \
 
 EXTRA=" .newsboat/urls \
         .config/termite/config \
-        .config/qutebrowser/config.py"
+        .config/qutebrowser/config.py \
+        .config/qutebrowser/qutewal.py"
 EXTRA_D=".newsboat \
         .config/termite \
         .config/qutebrowser\

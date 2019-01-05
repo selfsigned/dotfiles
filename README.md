@@ -38,7 +38,6 @@ Dependencies:
 - xscreensaver
 
 Optional
-- [pomodoro](https://kevinschoon.github.io/pomo)
 - hsetroot
 
 ## Screenshots
