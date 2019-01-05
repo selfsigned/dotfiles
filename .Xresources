@@ -8,7 +8,9 @@ Xft.lcdfilter: lcddefault
 
 !URxvt font
 !URxvt.letterSpace: -1
-URxvt.font: xft:Dejavu Sans Mono:size=9, xft:Symbola:pixelsize=9
+!URxvt.font: xft:Dejavu Sans Mono:size=9, xft:Symbola:pixelsize=9
+URxvt.font: xft: tewi:pixelsize=11, xft:Symbola:pixelsize=10
+URxvt.boldFont: xft:Tewi:pixelsize=11:antialias=true
 
 !rice
 URxvt.scrollBar: false
