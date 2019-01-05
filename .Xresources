@@ -8,7 +8,7 @@ Xft.lcdfilter: lcddefault
 
 !URxvt font
 !URxvt.letterSpace: -1
-URxvt.font: xft:Dejavu Sans Mono:size=9, xft:Symbola:pixelsize=9
+URxvt.font: xft:Dejavu Sans Mono:size=12, xft:Symbola:pixelsize=12
 
 !rice
 URxvt.scrollBar: false
@@ -16,9 +16,9 @@ URxvt*depth: 32
 URxvt*background: rgba:0000/0000/0200/c700
 
 !Perl exts
-URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /usr/bin/qutebrowser
-URxvt.matcher.button: 1
+!URxvt.perl-ext-common: default,matcher
+!URxvt.url-launcher: /usr/bin/qutebrowser
+!URxvt.matcher.button: 1
 
 !Rofi
 rofi.theme: ~/.cache/wal/colors-rofi-dark

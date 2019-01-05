@@ -3,6 +3,7 @@
 sxhkd &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
+compton &
 
 # Pick your poison
 #. "${HOME}/.config/bspwm/bspwmrcRiced"
@@ -19,3 +20,4 @@ setxkbmap -layout "$(setxkbmap -print | awk -F + '/xkb_symbols/ {print $2}')" -o
 
 xscreensaver &
 redshift -l 48.853:2.35 &
+dunst &

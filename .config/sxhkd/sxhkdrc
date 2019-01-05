@@ -3,9 +3,10 @@
 #
 
 # terminal emulator
-super + Return
+super + shift + Return
 	urxvt
-	# termite
+super + Return
+	termite
 
 # program launcher
 super + @space
@@ -153,3 +154,6 @@ XF86ScreenSaver
 # Set rice or normal theme
 super + {_,shift + }z
 	exec $HOME/.config/bspwm/{bspwmrcNormal,bspwmrcRiced}
+
+super + ctrl + @space
+	$HOME/.local/bin/rofi-emoji

@@ -13,7 +13,7 @@ killall compton
 compton &
 
 # wal
-wal -a 72 -i "${HOME}/Pictures/bg"
+wal -a 75 -i "${HOME}/Pictures/bg"
 . "${HOME}/.cache/wal/colors.sh"
 bspc config normal_border_color "$color1"
 bspc config active_border_color "$color2"
