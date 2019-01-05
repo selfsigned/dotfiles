@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + {_,shift +} Return
-	termite {_,-e "tmux new -A -s default"}
+	urxvt {_,-e sh -c "tmux new -A -s default"}
 
 # program launcher
 super + @space

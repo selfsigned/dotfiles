@@ -30,13 +30,14 @@ git clone https://github.com/selfsigned/dotfiles ~/.dotfiles
 #### Bspwm
 Dependencies:
 - rxvt-unicode
+- [pywal](https://github.com/dylanaraps/pywal)
+- [xbanish](https://github.com/jcs/xbanish)
 - rofi
 - compton
 - redshift
 - xscreensaver
 
 Optional
-- [pywal](https://github.com/dylanaraps/pywal)
 - [pomodoro](https://kevinschoon.github.io/pomo)
 - hsetroot
 

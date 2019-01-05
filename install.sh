@@ -15,8 +15,11 @@ BASIC_P=".vim/undo \
 
 X11=".Xresources \
     .xinitrc \
+    .config/dunst/dunstrc
     .config/compton.conf"
+X11_D=".config/dunst"
 BSPWM=" .config/bspwm/bspwmrc \
+        .config/bspwm/config \
         .config/bspwm/bspwmrcNormal \
         .config/bspwm/bspwmrcRiced \
         .config/sxhkd/sxhkdrc"
@@ -94,9 +97,9 @@ basic () {
 }
 
 install_bspwm () {
-    make_dir $BSPWM_D
+    make_dir $X11_D $BSPWM_D
     make_symlink $X11 $BSPWM
-    printf "\nDependencies: rxvt-unicode rofi pywal hsetroot redshift xscreensaver\n"
+    printf "\nDependencies: pywal rxvt-unicode rofi pywal hsetroot redshift xscreensaver\n"
 }
 
 bspwm () {
@@ -113,7 +116,7 @@ bspwm () {
 
 install_i3 () {
     sed -i 's/bspwm/i3/g' .xinitrc
-    make_dir $I3_D
+    make_dir $X11_D $I3_D
     make_symlink $X11 $I3
     printf "\nDependencies: urxvt rofi redshift xscreensaver\n"
 }
