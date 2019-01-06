@@ -6,7 +6,7 @@ font = monaco 9
 foreground      = #d6dbe5
 foreground_bold = #d6dbe5
 cursor          = #d6dbe5
-background      = #131313
+background      = #000000
 
 # black
 color0  = #1f1f1f

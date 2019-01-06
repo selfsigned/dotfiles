@@ -113,6 +113,10 @@ super + ctrl + shift + space
 # move/resize
 #
 
+# rotate a group of nodes
+super + {_,shift +} r
+	bspc node @/ -R {180, 90}
+
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}

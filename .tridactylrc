@@ -1,0 +1,18 @@
+" vim like conf behavior
+sanitise tridactyllocal tridactylsync
+
+" vimperator but improved hint mode
+set hintfiltermode vimperator-reflow
+set hintchars 1234567890
+
+" cool normie friendly theme
+set theme shydactyl
+
+" improve tridactyls compatibility with built-in pages
+fixamo
+
+" blacklist
+blacklistadd repl.it
+
+" search engines
+set searchengine duckduckgo

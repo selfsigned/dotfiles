@@ -1,5 +1,5 @@
 # Tech news
-http://news.ycombinator.com/rss tech aggregator
+http://news.ycombinator.com/rss tech cs aggregator
 https://lobste.rs/newest.rss  tech aggregator
 http://n-gate.com/index.rss tech humor
 https://www.theregister.co.uk/headlines.atom tech
@@ -7,3 +7,8 @@ https://www.theregister.co.uk/headlines.atom tech
 # Distros
 https://www.voidlinux.eu/atom.xml distro
 https://www.archlinux.org/feeds/news/ distro
+
+# Podcasts
+https://feeds.pacific-content.com/commandlineheroes podcast tech
+https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA podcast cs # Computerphile
+https://www.youtube.com/feeds/videos.xml?channel_id=UClcE-kVhqyiHCcjYwcpfj9w podcast cs # LiveOverflow

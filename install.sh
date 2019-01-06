@@ -9,12 +9,17 @@ full_path () {
 REPO=$(dirname $(full_path "$0"))
 
 # Files
-BASIC=".vimrc .tmux.conf"
+BASIC=".vimrc .tmux.conf .lldbinit"
 BASIC_P=".vim/undo \
         .vim/tags"
 
-X11=".Xresources .xinitrc"
+X11=".Xresources \
+    .xinitrc \
+    .config/dunst/dunstrc
+    .config/compton.conf"
+X11_D=".config/dunst"
 BSPWM=" .config/bspwm/bspwmrc \
+        .config/bspwm/config \
         .config/bspwm/bspwmrcNormal \
         .config/bspwm/bspwmrcRiced \
         .config/sxhkd/sxhkdrc"
@@ -29,10 +34,12 @@ I3_D=".config/i3 \
 
 EXTRA=" .newsboat/urls \
         .config/termite/config \
-        .config/qutebrowser/config.py"
+        .config/qutebrowser/config.py \
+        .config/qutebrowser/qutewal.py"
 EXTRA_D=".newsboat \
         .config/termite \
-        .config/qutebrowser"
+        .config/qutebrowser\
+        .tridactylrc"
 
 make_symlink () {
     for file in $@; do
@@ -73,6 +80,12 @@ install_basic () {
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     make_dir $BASIC_P #vim undo dir
+    echo "Now run ':PlugInstall' within vim\n
+    Softwares to install for completion support:
+    C:clang
+    go: gocode
+    python: jedi
+    rust: racer"
 }
 
 basic () {
@@ -85,9 +98,9 @@ basic () {
 }
 
 install_bspwm () {
-    make_dir $BSPWM_D
+    make_dir $X11_D $BSPWM_D
     make_symlink $X11 $BSPWM
-    printf "\nDependencies: urxvt rofi redshift xscreensaver\n"
+    printf "\nDependencies: pywal rxvt-unicode rofi pywal hsetroot redshift xscreensaver\n"
 }
 
 bspwm () {
@@ -104,7 +117,7 @@ bspwm () {
 
 install_i3 () {
     sed -i 's/bspwm/i3/g' .xinitrc
-    make_dir $I3_D
+    make_dir $X11_D $I3_D
     make_symlink $X11 $I3
     printf "\nDependencies: urxvt rofi redshift xscreensaver\n"
 }
@@ -136,9 +149,8 @@ extra () {
 
 mac () {
     echo "If you haven't already, run https://github.com/kube/42homebrew"
-    brew install vim tmux # vim is outdated on MacOS (like everything else)
+    brew install vim tmux ctags # vim is outdated on MacOS (like everything else)
     basic
-    echo "Now run :PlugInstall in vim"
 }
 
 usage () {
