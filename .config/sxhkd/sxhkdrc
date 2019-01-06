@@ -4,8 +4,8 @@
 
 # terminal emulator
 super + Return
-	urxvt
-	# termite
+	termite
+	# urxvt
 
 # program launcher
 super + @space
@@ -145,6 +145,19 @@ super + {Left,Down,Up,Right}
 XF86ScreenSaver
 	xscreensaver-command -lock
 
+super + F10
+	pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+super + F9
+	pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+super + F8
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+super + F7
+	light -A 5
+super + F6
+	light -U 5
 #
 # Custom
 #
@@ -152,3 +165,6 @@ XF86ScreenSaver
 # Set rice or normal theme
 super + {_,shift + }z
 	exec $HOME/.config/bspwm/{bspwmrcNormal,bspwmrcRiced}
+
+ctrl + alt + @space
+	rofimoji

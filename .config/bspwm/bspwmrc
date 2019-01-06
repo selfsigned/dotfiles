@@ -14,7 +14,9 @@ bspc rule -a Virtualbox state=floating
 bspc rule -a Qemu-system-x86_64 state=floating
 
 compton &
+xfsettingsd &
 xscreensaver &
+xss-lock xscreensaver-lock &
 redshift -l 48.853:2.35 &
 
 # Chromebook
