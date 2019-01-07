@@ -2,10 +2,12 @@
 
 sxhkd &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor HDMI-1 -d I II
+bspc monitor HDMI-2 -d III IV V
 
 # Useless capslock key begone
-setxkbmap -layout "$(setxkbmap -print | awk -F + '/xkb_symbols/ {print $2}')" -option ctrl:nocaps
+#setxkbmap -layout "$(setxkbmap -print | awk -F + '/xkb_symbols/ {print $2}')" -option ctrl:nocaps
+setxkbmap -layout us_qwerty-fr  -option ctrl:nocaps
 
 # Background tools
 dunst &

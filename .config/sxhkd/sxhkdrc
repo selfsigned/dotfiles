@@ -153,6 +153,13 @@ XF86ScreenSaver
 # Custom
 #
 
+# multi monitor / work stuff
+super + q
+	bspc monitor -f next
+
+super + shift + q
+	xscreensaver-command -lock
+
 # Set rice or normal theme
 super + {_,shift + }z
 	exec $HOME/.config/bspwm/{bspwmrcNormal,bspwmrcRiced}
