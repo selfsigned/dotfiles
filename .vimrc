@@ -17,8 +17,8 @@ Plug 'vim-airline/vim-airline'		" Status bar bloat
 Plug 'vim-airline/vim-airline-themes'	" more bloat
 Plug 'airblade/vim-gitgutter'		" Git integration
 Plug 'christoomey/vim-tmux-navigator'	" tmux integration
+Plug 'sheerun/vim-polyglot'		" Language pack for vim
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Go integration
-Plug 'hashivim/vim-terraform'		" terraform integration
 call plug#end()
 " Vim 8.1 debug
 packadd termdebug			" gdb term integration
