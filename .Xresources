@@ -22,6 +22,12 @@ URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
 
+!Input fix
+URxvt.keysym.Control-Up:     \033[1;5A
+URxvt.keysym.Control-Down:   \033[1;5B
+URxvt.keysym.Control-Left:   \033[1;5D
+URxvt.keysym.Control-Right:  \033[1;5C
+
 !Rofi
 rofi.theme: ~/.cache/wal/colors-rofi-dark
 
@@ -62,5 +68,4 @@ rofi.theme: ~/.cache/wal/colors-rofi-dark
 *.color7:      #d6dbe5
 *.color15:     #ffffff
 !
-! Bold, Italic, Underline
-*.colorBD:     #d6dbe5
+! Bold, Italic, Underline *.colorBD:     #d6dbe5

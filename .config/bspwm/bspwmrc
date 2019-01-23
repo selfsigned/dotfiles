@@ -4,14 +4,18 @@ sxhkd &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
-# Pick your poison
-#. "${HOME}/.config/bspwm/bspwmrcRiced"
-. "${HOME}/.config/bspwm/bspwmrcNormal"
-
 # Useless capslock key begone
 setxkbmap -layout "$(setxkbmap -print | awk -F + '/xkb_symbols/ {print $2}')" -option ctrl:nocaps
 
 # Background tools
+dunst &
 xbanish &
 xscreensaver &
 redshift -l 48.853:2.35 &
+
+# Pick your poison
+#. "${HOME}/.config/bspwm/bspwmrcRiced"
+. "${HOME}/.config/bspwm/bspwmrcNormal"
+
+# Fortune
+notify-send "Fortune" "$(fortune)"
