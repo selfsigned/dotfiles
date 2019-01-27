@@ -1,52 +1,14 @@
 [options]
 font = monaco 12
 
-# [colors]
-# # special
-# foreground      = #d6dbe5
-# foreground_bold = #d6dbe5
-# cursor          = #d6dbe5
-# background      = #131313
-
-# # black
-# color0  = #1f1f1f
-# color8  = #d6dbe5
-
-# # red
-# color1  = #f81118
-# color9  = #de352e
-
-# # green
-# color2  = #2dc55e
-# color10 = #1dd361
-
-# # yellow
-# color3  = #ecba0f
-# color11 = #f3bd09
-
-# # blue
-# color4  = #2a84d2
-# color12 = #1081d6
-
-# # magenta
-# color5  = #4e5ab7
-# color13 = #5350b9
-
-# # cyan
-# color6  = #1081d6
-# color14 = #0f7ddb
-
-# # white
-# color7  = #d6dbe5
-# color15 = #ffffff
+# Tango
 
 [colors]
-# tango
 # special
+background      = rgba(63, 63, 63, 0.8)
 foreground      = #babdb6
 foreground_bold = #babdb6
 cursor          = #babdb6
-background      = #000000
 
 # black
 color0  = #2e3436
@@ -79,4 +41,3 @@ color14 = #34e2e2
 # white
 color7  = #d3d7cf
 color15 = #eeeeec
-
