@@ -12,6 +12,7 @@ bspc config honor_size_hints        true
 
 # App settings
 bspc rule -a Firefox desktop='^1'
+bspc rule -a jetbrains-idea desktop='^3'
 bspc rule -a Pavucontrol state=floating
 bspc rule -a Zathura  state=tiled
 bspc rule -a Virtualbox state=floating

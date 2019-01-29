@@ -2,8 +2,8 @@
 
 sxhkd &
 
-bspc monitor HDMI-1 -d I II
-bspc monitor HDMI-2 -d III IV V
+bspc monitor DVI-I-1 -d I II
+bspc monitor DVI-D-0 -d III IV V
 
 # Useless capslock key begone
 #setxkbmap -layout "$(setxkbmap -print | awk -F + '/xkb_symbols/ {print $2}')" -option ctrl:nocaps
