@@ -17,5 +17,10 @@ bspc rule -a Qemu-system-x86_64 state=floating
 # Useless capslock key begone
 setxkbmap -layout "$(setxkbmap -print | awk -F + '/xkb_symbols/ {print $2}')" -option ctrl:nocaps
 
+# VM screen res
+xrandr --newmode "2560x1440" 241.50 2560 2600 2632 2720 1440 1443 1448 1481 -hsync +vsync && \
+xrandr --addmode Virtual1 2560x1440 && \
+xrandr --output Virtual1 --mode 2560x1440
+
 xscreensaver &
 redshift -l 48.853:2.35 &

@@ -153,3 +153,6 @@ XF86ScreenSaver
 # Set rice or normal theme
 super + {_,shift + }z
 	exec $HOME/.config/bspwm/{bspwmrcNormal,bspwmrcRiced}
+
+alt + super + @space
+	rofimoji

@@ -17,6 +17,7 @@ Plug 'vim-airline/vim-airline'		" Status bar bloat
 Plug 'vim-airline/vim-airline-themes'	" more bloat
 Plug 'christoomey/vim-tmux-navigator'	" tmux integration
 Plug 'pandark/42header.vim'		" 42 Header
+Plug 'lervag/vimtex'			" LaTeX
 call plug#end()
 " Vim 8.1 debug
 packadd termdebug			" gdb term integration
@@ -45,6 +46,9 @@ autocmd Filetype c setlocal sw=4 sts=4 ts=4 noexpandtab
 autocmd Filetype cpp setlocal sw=4 sts=4 ts=4 noexpandtab
 autocmd Filetype sh setlocal sw=4 sts=4 ts=8 expandtab
 autocmd Filetype python setlocal sw=4 sts=4 ts=8 expandtab
+
+" Tex
+"
 
 " 42 comment style
 autocmd FileType c setlocal comments=sr:/*,mb:**,ex:*/
