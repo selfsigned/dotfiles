@@ -4,16 +4,6 @@ sxhkd &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
-# Pick your poison
-#. "${HOME}/.config/bspwm/bspwmrcRiced"
-. "${HOME}/.config/bspwm/bspwmrcNormal"
-
-bspc rule -a Firefox desktop='^1'
-bspc rule -a Pavucontrol state=floating
-bspc rule -a Zathura  state=tiled
-bspc rule -a Virtualbox state=floating
-bspc rule -a Qemu-system-x86_64 state=floating
-
 # Useless capslock key begone
 setxkbmap -layout "$(setxkbmap -print | awk -F + '/xkb_symbols/ {print $2}')" -option ctrl:nocaps
 
@@ -22,5 +12,15 @@ xrandr --newmode "2560x1440" 241.50 2560 2600 2632 2720 1440 1443 1448 1481 -hsy
 xrandr --addmode Virtual1 2560x1440 && \
 xrandr --output Virtual1 --mode 2560x1440
 
+# Background tools
+dunst &
+xbanish &
 xscreensaver &
 redshift -l 48.853:2.35 &
+
+# Pick your poison
+#. "${HOME}/.config/bspwm/bspwmrcRiced"
+. "${HOME}/.config/bspwm/bspwmrcNormal"
+
+# Fortune
+notify-send "Fortune" "$(fortune)"
