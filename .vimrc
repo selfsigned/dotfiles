@@ -18,6 +18,7 @@ Plug 'vim-airline/vim-airline-themes'	" more bloat
 Plug 'airblade/vim-gitgutter'		" Git integration
 Plug 'christoomey/vim-tmux-navigator'	" tmux integration
 Plug 'sheerun/vim-polyglot'		" Language pack for vim
+Plug 'rhysd/vim-clang-format'		" Vim clang-format integration
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Go integration
 call plug#end()
 " Vim 8.1 debug
@@ -43,14 +44,10 @@ set undodir=$HOME/.vim/undo
 
 " 42 indent style
 filetype plugin indent on
-autocmd Filetype c setlocal sw=4 sts=4 ts=4 noexpandtab
-autocmd Filetype cpp setlocal sw=4 sts=4 ts=4 noexpandtab
-autocmd Filetype go setlocal sw=4 ts=4 noexpandtab
-autocmd Filetype sh setlocal sw=4 sts=4 ts=8 expandtab
-autocmd Filetype python setlocal sw=4 sts=4 ts=8 expandtab
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-autocmd Filetype groovy setlocal sw=4 sts=4 ts=8 expandtab
-autocmd Filetype Jenkinsfile setlocal sw=4 sts=4 ts=8 expandtab
+" set by vim-polyglot
+if findfile('.clang-format', fnameescape(expand('%:p:h')).';') == ''
+  autocmd Filetype c setlocal sw=4 sts=4 ts=4 noexpandtab " 42 style fallback
+endif
 
 " 42 comment style
 autocmd FileType c setlocal comments=sr:/*,mb:**,ex:*/
@@ -94,8 +91,8 @@ map <f5> :GundoToggle<CR>
 map <f12> :make<CR>
 
 " Terraform
-let g:terraform_fmt_on_save=1
-let g:terraform_align=1
+let g:terraform_fmt_on_save = 1
+let g:terraform_align = 1
 
 " ALE
 nmap <silent> <leader>aj :ALENext<cr>
@@ -103,3 +100,9 @@ nmap <silent> <leader>ak :ALEPrevious<cr>
 let g:ale_c_clang_options='-Wall -Wextra -Wpedantic -Isrc -Iinclude -Iincludes -Ilibft -Ilibft/includes -I..libft/includes'
 let g:ale_c_gcc_options = g:ale_c_clang_options
 let g:ale_linters = {'c': ['gcc']}
+
+" Clang-format
+" autocmd FileType c ClangFormatAutoEnable
+let g:clang_format#auto_format = 1 " Format on write
+let g:clang_format#enable_fallback_style = 1 " do nothing when there's no clang_fmt
+let g:clang_format#detect_style_file = 1 " apply .clang-format
