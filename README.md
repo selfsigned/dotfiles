@@ -1,26 +1,32 @@
 # dotfiles
-Compliant with 42's norm and it even comes with an install script!
+The configuration files I use on my devices, at work, or at 42.
+
+## Screenshots
+#### Work
+![.assets/work.png]
+#### Fun
+![.assets/fun.png]
 
 ## Installation
->I'm a 42 student and I don't have time to write my own config files!
+``` sh
+$ ./install.sh 
+Usage: install.sh [options] selection
 
-You're in luck!
-```sh
-curl -fsSL https://rawgit.com/kube/42homebrew/master/install.sh | zsh
-git clone https://github.com/selfsigned/dotfiles ~/.dotfiles
-~/.dotfiles/install.sh --rm 42
-```
+Options:
+ --rm      delete the current files and install
+ --rm-dir  delete the current files and directories and install !!WARNING: DANGEROUS!!
+ --clean   delete files only, use with --rm or --rm-dir
 
->I'm a 42 student and a GNU/Linux user
-```sh
-git clone https://github.com/selfsigned/dotfiles ~/.dotfiles
-~/.dotfiles/install.sh --rm all
-```
+Selection:
+ 42        setup for MacOS
+ basic     setup vim and tmux (recommended)
+ bspwm     setup bspwm configs
+ i3        setup i3 configs
+ extra     misc dotfiles
+ all       comfy setup
 
->What the hell is 42?
-```sh
-git clone https://github.com/selfsigned/dotfiles ~/.dotfiles
-~/.dotfiles/install.sh --rm bspwm extra
+$ ./install.sh all
+[...]
 ```
 
 ## Content
@@ -39,6 +45,3 @@ Dependencies:
 
 Optional
 - hsetroot
-
-## Screenshots
-TODO
