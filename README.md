@@ -3,9 +3,9 @@ The configuration files I use on my devices, at work, or at 42.
 
 ## Screenshots
 #### Work
-![.assets/work.png]
+![work]( .assets/work.png )
 #### Fun
-![.assets/fun.png]
+![fun]( .assets/fun.png )
 
 ## Installation
 ``` sh
