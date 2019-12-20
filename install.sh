@@ -9,7 +9,7 @@ full_path () {
 REPO=$(dirname $(full_path "$0"))
 
 # Files
-BASIC=".vimrc .tmux.conf .lldbinit"
+BASIC=".vimrc .tmux.conf .lldbinit .gdbinit"
 BASIC_P=".vim/undo \
         .vim/tags"
 
