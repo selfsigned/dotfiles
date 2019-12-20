@@ -12,6 +12,6 @@ bspc config presel_feedback_color   "#f4d775"
 if ! `command -v hsetroot 2>/dev/null`; then
     xsetroot
 fi
-killall compton
+compton
 
 wal --theme ${WAL_THEME:-"monokai"}

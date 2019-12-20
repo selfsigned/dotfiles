@@ -202,7 +202,7 @@ bindsym XF86ScreenSaver exec "xscreensaver-command -lock"
 bindsym $mod+$mod2+s exec $lock
 
 # start a terminal
-bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec termite
 
 # rofi
 bindsym $mod+d exec zsh -c  "rofi -show run"
